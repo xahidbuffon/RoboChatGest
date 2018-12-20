@@ -31,7 +31,7 @@ if __name__ == '__main__':
     obj_classes = {1:'One', 2:'Two', 3:'Three', 4:'Four', 5:'Five', 6:'Left', 7:'Right', 8:'Pic', 9:'Ok', 10:'zero'}
     gest_recog = HandGestRecognition()
 
-    if args.test_vid:
+    if not args.test_vid:
         # test a sequence of images
         IMAGE_PATHS = [os.path.join(args.im_dir, f) for f in os.listdir(args.im_dir) if check_file_ext(f)]
         IMAGE_PATHS.sort(key=lambda f: int(filter(str.isdigit, f)))
