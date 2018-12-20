@@ -28,7 +28,7 @@ if __name__ == '__main__':
     parser.add_argument('--test_vid', required=False, dest='test_vid', type=bool, default=True, help='Test video or images')
     args = parser.parse_args()
 
-    obj_classes = {1:'One', 2:'Two', 3:'Three', 4:'Four', 5:'Five', 6:'Left', 7:'Right', 8:'Pic', 9:'Ok', 10:'zero'}
+    obj_classes = {1:'One', 2:'Two', 3:'Three', 4:'Four', 5:'Five', 6:'Left', 7:'Right', 8:'Pic', 9:'Ok', 10:'Zero'}
     gest_recog = HandGestRecognition()
 
     if not args.test_vid:

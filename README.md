@@ -7,10 +7,10 @@ This is a container for a hand gesture-based human-robot communication framework
 ### Hand gestures 
 The following set of 10 simple and intuitive hand gestures are used:
 
-| Zero | One | Two | Three | Four | Five | Left | Right | Pic | Ok |  
+| Zero | One | Two | Three | Four | Five | Left | Right | Pic | Ok | 
 |:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|
-| ![det-7](/test_data/res/d0.jpg) | ![det-7](/test_data/res/d1.jpg)     | ![det-1](/test_data/res/d2.jpg) | ![det-7](/test_data/res/d3.jpg) | ![det-7](/test_data/res/d4.jpg)     | ![det-1](/test_data/res/d5.jpg) | ![det-7](/test_data/res/d6.jpg) | ![det-7](/test_data/res/d7.jpg)     | ![det-1](/test_data/res/d8.jpg) |![det-1](/test_data/res/d9.jpg) |
-| ![det-7](/test_data/res/u0.jpg) | ![det-7](/test_data/res/u1.jpg)     | ![det-1](/test_data/res/u2.jpg) | ![det-7](/test_data/res/u3.jpg) | ![det-7](/test_data/res/u4.jpg)     | ![det-1](/test_data/res/u5.jpg) | ![det-7](/test_data/res/u6.jpg) | ![det-7](/test_data/res/u7.jpg)     | ![det-1](/test_data/res/u8.jpg) |![det-1](/test_data/res/u9.jpg) |
+| ![det-1](/test_data/res/d0.jpg) | ![det-5](/test_data/res/d1.jpg)     | ![det-9](/test_data/res/d2.jpg) | ![det-13](/test_data/res/d3.jpg) | ![det-17](/test_data/res/d4.jpg)     | ![det-2](/test_data/res/d5.jpg) | ![det-6](/test_data/res/d6.jpg) | ![det-10](/test_data/res/d7.jpg)     | ![det-14](/test_data/res/d8.jpg) |![det-18](/test_data/res/d9.jpg) |
+| ![det-3](/test_data/res/u0.jpg) | ![det-7](/test_data/res/u1.jpg)     | ![det-11](/test_data/res/u2.jpg) | ![det-15](/test_data/res/u3.jpg) | ![det-19](/test_data/res/u4.jpg)     | ![det-4](/test_data/res/u5.jpg) | ![det-8](/test_data/res/u6.jpg) | ![det-12](/test_data/res/u7.jpg)     | ![det-16](/test_data/res/u8.jpg) |![det-20](/test_data/res/u9.jpg) |
 
 
 
@@ -20,11 +20,15 @@ Use the [test_detector.py](test_detector.py) file to test other images or video 
 
 | {Pic, Pic} | {Five, Two} | {Zero, Ok} |
 |:--------------------|:----------------|:----------------
-| ![det-86](/test_data/res/0.jpg)     | ![det-96](/test_data/res/5.jpg) |   ![det-106](/test_data/res/7.jpg) |  
+| ![det-21](/test_data/res/0.jpg)     | ![det-22](/test_data/res/5.jpg) |   ![det-23](/test_data/res/7.jpg) | 
 #### Demos: https://youtu.be/cHQ9E-yRSho
 
 
 ### Testing the RoboChatGest 
+| Menue mode triggered | Select Menue | Select Menue 3 |
+|:--------------------|:----------------|:----------------
+| ![det-24](/test_data/res/m3.jpg)     | ![det-25](/test_data/res/m5.jpg) |   ![det-26](/test_data/res/m10.jpg) | 
+
 #### Demos: https://youtu.be/evPMcn_YhhY, https://youtu.be/An4IdMV_VtU
 
 

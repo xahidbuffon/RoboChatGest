@@ -138,7 +138,7 @@ class HandGestRecognition():
                 # assign {left, right} tokens and return
                 if (left_box[0] > right_box[0]):
                     left_box, right_box = right_box, left_box
-                left_token, right_token = right_token, left_token
+                    left_token, right_token = right_token, left_token
                 return left_token, left_box, right_token, right_box, True
     
             else:

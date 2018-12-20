@@ -23,21 +23,23 @@ if __name__ == '__main__':
             --vid    >> path of the test video file (0 for webcam)
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('--im_dir', required=False, dest='im_dir', type=str, default='test_data/ims', help='Folder containing images')
-    parser.add_argument('--vid', required=False, dest='vid', type=str, default='test_data/test.avi', help='Video file')
-    parser.add_argument('--test_vid', required=False, dest='test_vid', type=bool, default=True, help='Test video or images')
+    parser.add_argument('--im_dir', required=False, dest='im_dir', type=str, default='test_data/select_menues/3', help='Folder containing images')
+    parser.add_argument('--vid', required=False, dest='vid', type=str, default='', help='Video file')
+    parser.add_argument('--test_vid', required=False, dest='test_vid', type=bool, default=False, help='Test video or images')
     args = parser.parse_args()
 
-    obj_classes = {1:'One', 2:'Two', 3:'Three', 4:'Four', 5:'Five', 6:'Left', 7:'Right', 8:'Pic', 9:'Ok', 10:'zero'}
     robochat_gest = RoboChatGest_pipeline()
 
+    i=0
     if not args.test_vid:
         # test a sequence of images
         IMAGE_PATHS = [os.path.join(args.im_dir, f) for f in os.listdir(args.im_dir) if check_file_ext(f)]
         IMAGE_PATHS.sort(key=lambda f: int(filter(str.isdigit, f)))
         for im_file in IMAGE_PATHS:
             frame = cv2.imread(im_file)
-            localized_objs = robochat_gest.ImageProcessor(frame) 
+            frame = robochat_gest.ImageProcessor(frame, vizualize=True, wait_time=1000) 
+            cv2.imwrite(str(i)+'.jpg', frame)
+            i += 1
 
                       
     else:
@@ -51,7 +53,7 @@ if __name__ == '__main__':
         while(cap.isOpened()):
             ret, frame = cap.read()
             if frame is not None:
-                localized_objs = robochat_gest.ImageProcessor(frame) 
+                robochat_gest.ImageProcessor(frame, vizualize=True, wait_time=50)
 
             else:
                 counter += 1

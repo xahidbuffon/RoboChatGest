@@ -19,7 +19,7 @@ import yaml
 from gestureRecognizer import HandGestRecognition
 from instructionGenerator import InstructionGeneration
 from menueSelector import MenueSelection
-
+from utils import draw_boxes_and_labels, write_instructions
 
 class RoboChatGest_pipeline:
         """ 
@@ -30,6 +30,7 @@ class RoboChatGest_pipeline:
 		self.gest_rec = HandGestRecognition()
                 # we have 10 classes (see the paper ieeexplore.ieee.org/document/8543168)
 		self.classes = ['0', '1', '2', '3', '4', '5', 'left', 'right', 'pic','ok']
+                self.obj_classes = { 0:'Zero',1:'One',2:'Two',3:'Three',4:'Four',5:'Five',6:'Left',7:'Right',8:'Pic',9:'Ok'}
                 # instance for instruction generation
 		self.ins = InstructionGeneration(self.classes)
                 # flags for Aqua menue selection
@@ -47,7 +48,7 @@ class RoboChatGest_pipeline:
 		self.use_single_hand = run_param_dict['use_Single_Hand_Gestures_only'] 
 			
 
-	def ImageProcessor(self):
+	def ImageProcessor(self, img, vizualize=False, wait_time=1):
                 """ 
                    Process each frame
 			> detect left and right hand-gestures
@@ -56,10 +57,14 @@ class RoboChatGest_pipeline:
 		   see more details in the paper: ieeexplore.ieee.org/document/8543168
                 """
                 # get the tokens (and the bounding boxes for vizualization)
-		left_token, left_box, right_token, right_box, success_ = self.gest_rec.Get_gest(self.original, self.use_single_hand)
-		print ("Hand gestures detection success: {2}. token: ({0}, {1})".format(right_token, left_token, success_))
+		left_token, left_box, right_token, right_box, success_ = self.gest_rec.Get_gest(img, self.use_single_hand)
+		print ("Hand gestures detected: ({0}, {1})".format(self.obj_classes[right_token], self.obj_classes[left_token]))
 
 		if success_:
+                        if vizualize:
+                        	localised_objs = [(left_token, left_box), (right_token, right_box)]
+                        	img = draw_boxes_and_labels(img, localised_objs, self.obj_classes)
+
 			# ROBO_GEST mode
 			if self.robo_gest_mode:
                                 # reverse left and right since camera(left, right) == person(right, left)
@@ -67,6 +72,7 @@ class RoboChatGest_pipeline:
 				get_token, done_ = self.ins.decode(right_token, left_token)
 				print (get_token, done_)
 				if done_:
+					#>> Here we perform the operations/service calls to execute it
                                         print 
                                         print ("*** Decoded Instruction: {0}".format(get_token))
                                         print
@@ -74,21 +80,26 @@ class RoboChatGest_pipeline:
 			# For Menue Selection only
 			if self.menue_mode:
 				men_ins_, men_done_ = self.men_sel.decode(right_token, left_token)
-                                #print(men_ins_, men_done_)
+                                if men_ins_ != '': 
+	                                img = write_instructions(img, men_ins_)
 				if men_done_:
+					#>> Here we perform the operations/service calls to change the menue
                                         print 
                                         print ("Decoded Instruction: {0}".format(men_ins_))
                                         print
-					men_tok = men_ins_.split(' ')
-					if (len(men_tok)>0 and men_tok[1] in self.menue_map.keys()):
-						menue_selected = self.menue_map[men_tok[1]]
-						msg = Tags()
-						tag = Tag()
-						tag.id = menue_selected
-						msg.tags = [tag]
-						self.tags_pub.publish(msg)
-						print ('***** Menue selected :: {0}'.format(menue_selected))
-                                                print
+					
+		self.vizualize_img(img, vizualize, wait_time)
+                return img
+
+
+
+	def vizualize_img(self, img, vizualize=False, wait_time=1):
+                """ 
+                   Annotates bounding box, label and then shows it
+                """
+		if vizualize:
+			cv2.imshow('Annotated Image', img)
+			cv2.waitKey(wait_time)
 		
 
 

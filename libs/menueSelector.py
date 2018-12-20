@@ -36,7 +36,7 @@ class MenueSelection:
         # for simple gesture tokens to  menue instruction mapping
         # instruction will be like "MENUE id" 
         self.STATES = { ('_', '_'): 'IDLE', ('0', '0'): '0', ('5', '5'): '5', ('1', '1'): '1', 
-                        ('2', '2'): '2', ('3', '3'): '3', ('4', '4'): '4', ('ok', 'ok'): 'MENUE'}
+                        ('2', '2'): '2', ('3', '3'): '3', ('4', '4'): '4', ('ok', 'ok'): 'SELECT MENUE'}
         self.CURR_State = 'IDLE'
         self.instruction_ = ''
   
@@ -46,7 +46,7 @@ class MenueSelection:
     def init_FSM(self, l_token, r_token):
         # Looks for triggering state = {Go}
         if ( self.ys[l_token]=='ok' and self.ys[r_token]=='ok'):
-          self.CURR_State = 'MENUE'
+          self.CURR_State = 'SELECT MENUE'
           self.instruction_ = self.CURR_State + ' '  
   
 
@@ -57,7 +57,7 @@ class MenueSelection:
         # else keep waiting for that id and return False for now
         if ((self.ys[l_token], self.ys[r_token]) in self.STATES.keys()):
           Prospective_state_ = self.STATES[(self.ys[l_token], self.ys[r_token])]
-          if ((self.CURR_State == 'MENUE') and (Prospective_state_ != 'MENUE')):
+          if ((self.CURR_State == 'SELECT MENUE') and (Prospective_state_ != 'SELECT MENUE')):
               self.CURR_State = Prospective_state_
               self.instruction_ = self.instruction_ + self.CURR_State
               return True
