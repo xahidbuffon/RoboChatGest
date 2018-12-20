@@ -7,13 +7,12 @@ This is a container for an autonomous diver-following project. Deep object detec
 ## Testing the detector
 For testing individual images, run the [test_detector.py](test_detector.py) file. Change the image directory (im_dir) to test other images of interest.
 
-| Single diver | Multiple divers | Divers and ROVs | 
-|:--------------------|:--------------------|:----------------|
-| ![det-7](/test_data/res/6.jpg) | ![det-7](/test_data/res/7.jpg)     | ![det-1](/test_data/res/1.jpg) |
+| Zero | One | Two | Three | Four | Five | Left | Right | Ok | Pic |  
+|:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|
+| ![det-7](/test_data/res/0.jpg) | ![det-7](/test_data/res/0.jpg)     | ![det-1](/test_data/res/0.jpg) | ![det-7](/test_data/res/0.jpg) | ![det-7](/test_data/res/0.jpg)     | ![det-1](/test_data/res/0.jpg) | ![det-7](/test_data/res/0.jpg) | ![det-7](/test_data/res/0.jpg)     | ![det-1](/test_data/res/0.jpg) |![det-1](/test_data/res/0.jpg) |
 
 
-## Testing the diver-tracker 
-For testing on a diver-tracking video or sequences of images, run the [test_diver_tracker.py](test_diver_tracker.py) file. A couple of videos and image sequences are provided in the test_data folder. Change the argument values to test on other files.
+
 
 
 ### Video demo: https://youtu.be/cHQ9E-yRSho
@@ -21,6 +20,9 @@ For testing on a diver-tracking video or sequences of images, run the [test_dive
 | {Pic, Pic} | {Five, Two} | {Zero, Ok} | {Left, Left} | 
 |:--------------------|:----------------|:----------------|:----------------
 | ![det-86](/test_data/res/0.jpg)     | ![det-96](/test_data/res/5.jpg) |   ![det-106](/test_data/res/7.jpg) | ![det-1118](/test_data/res/10.jpg)     | 
+
+
+## Testing the RoboChatGest 
 
 
 
