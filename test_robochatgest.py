@@ -37,6 +37,7 @@ if __name__ == '__main__':
         IMAGE_PATHS.sort(key=lambda f: int(filter(str.isdigit, f)))
         for im_file in IMAGE_PATHS:
             frame = cv2.imread(im_file)
+            frame = cv2.resize(frame, (500, 375))
             frame = robochat_gest.ImageProcessor(frame, vizualize=True, wait_time=1000) 
             cv2.imwrite(str(i)+'.jpg', frame)
             i += 1

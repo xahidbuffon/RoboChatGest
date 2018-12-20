@@ -107,12 +107,11 @@ def write_instructions(img, token, box_color=(0, 255, 255)):
     if not token or token =='': return img
     img_h, img_w = img.shape[:2]
     font = cv2.FONT_HERSHEY_SIMPLEX
-    font_size = 0.8
+    font_size = 0.5
     font_color = (0, 0, 0)
-    left1, top1, right1, top = int(img_w/3), int(0.7*img_h), int(img_w/3)+img_w/3, int(0.8*img_h)  
-    cv2.rectangle(img, (left1, top1), (right1, top), box_color, -1, 1)
-    top2 = 0 if top<25 else top-25
-    cv2.putText(img, token, (left1+10, top2), font, font_size, font_color, 1, cv2.LINE_AA)
+    left1, top1, right1, bottom1 = int(img_w/3), int(0.7*img_h), int(img_w/3)+img_w/3, int(0.8*img_h)  
+    cv2.rectangle(img, (left1, top1), (right1, bottom1), box_color, -1, 1)
+    cv2.putText(img, token, (left1+10, top1+20), font, font_size, font_color, 1, cv2.LINE_AA)
 
 
     return img
