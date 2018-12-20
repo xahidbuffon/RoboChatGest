@@ -29,7 +29,9 @@ In RoboChatGest, the sequence of hand gestures are used to generate instructions
 - Task switching: STOP current task and SWITCH to another (predefined) task
 - Parameter reconfiguration: CONTD current program, but UPDATE values of a (predefined) parameter
 
-For example, instructing the robot to stop its current task and hover can be done as follows:
+For example, instructing the robot to 'STOP current task and HOVER' can be done as follows:
+- Start token for STOP current task: {0, 0} + token for HOVER {5, 5} + confirmation token {Ok, Ok}
+- Hence, {left, right} hand gesture tokens = {0, 0}, {5, 5}, {Ok, Ok}  
 
 | RoboChatGest mode | STOP HOVER | Token: STOP HOVER | Token: STOP HOVER GO |
 |:--------------------|:----------------|:----------------|:----------------
