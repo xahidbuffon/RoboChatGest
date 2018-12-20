@@ -1,4 +1,4 @@
-This is a container for a hand gesture-based human-robot communication framework named RoboChatGest. This allows divers to use a set of simple hand gestures to communicate instructions to an underwater robot and recinfigure dynamic parameters during a mission. The ROS version, tested on Aqua-8 robot, is provided in the robo_chat_gest folder.
+This is a container for a hand gesture-based human-robot communication framework named RoboChatGest. This allows divers to use a set of simple hand gestures to communicate instructions to an underwater robot and dynamically reconfigure program parameters during a mission. The ROS version, tested on Aqua-8 robot, is provided in the robo_chat_gest folder.
 
 - Model and dataset information:  https://onlinelibrary.wiley.com/doi/full/10.1002/rob.21837 
 - RoboChatGest programming rules:  https://ieeexplore.ieee.org/document/8461197
@@ -7,7 +7,7 @@ This is a container for a hand gesture-based human-robot communication framework
 ### Hand gestures 
 The following set of 10 simple and intuitive hand gestures are used:
 
-| Zero | One | Two | Three | Four | Five | Left | Right | Ok | Pic |  
+| Zero | One | Two | Three | Four | Five | Left | Right | Pic or 'L' | Ok |  
 |:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|
 | ![det-7](/test_data/res/d0.jpg) | ![det-7](/test_data/res/d1.jpg)     | ![det-1](/test_data/res/d2.jpg) | ![det-7](/test_data/res/d3.jpg) | ![det-7](/test_data/res/d4.jpg)     | ![det-1](/test_data/res/d5.jpg) | ![det-7](/test_data/res/d6.jpg) | ![det-7](/test_data/res/d7.jpg)     | ![det-1](/test_data/res/d8.jpg) |![det-1](/test_data/res/d9.jpg) |
 | ![det-7](/test_data/res/u0.jpg) | ![det-7](/test_data/res/u1.jpg)     | ![det-1](/test_data/res/u2.jpg) | ![det-7](/test_data/res/u3.jpg) | ![det-7](/test_data/res/u4.jpg)     | ![det-1](/test_data/res/u5.jpg) | ![det-7](/test_data/res/u6.jpg) | ![det-7](/test_data/res/u7.jpg)     | ![det-1](/test_data/res/u8.jpg) |![det-1](/test_data/res/u9.jpg) |
@@ -15,7 +15,7 @@ The following set of 10 simple and intuitive hand gestures are used:
 
 
 ### Testing the detector
-Run the [test_detector.py](test_detector.py) file to test other images or video files of interest.
+Use the [test_detector.py](test_detector.py) file to test other images or video files of interest.
 
 
 | {Pic, Pic} | {Five, Two} | {Zero, Ok} | {Left, Left} | 
