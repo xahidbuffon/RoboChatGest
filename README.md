@@ -7,7 +7,7 @@ This is a container for a hand gesture-based human-robot communication framework
 ### Hand gestures 
 The following set of 10 simple and intuitive hand gestures are used:
 
-| Zero | One | Two | Three | Four | Five | Left | Right | Pic or 'L' | Ok |  
+| Zero | One | Two | Three | Four | Five | Left | Right | Pic | Ok |  
 |:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|
 | ![det-7](/test_data/res/d0.jpg) | ![det-7](/test_data/res/d1.jpg)     | ![det-1](/test_data/res/d2.jpg) | ![det-7](/test_data/res/d3.jpg) | ![det-7](/test_data/res/d4.jpg)     | ![det-1](/test_data/res/d5.jpg) | ![det-7](/test_data/res/d6.jpg) | ![det-7](/test_data/res/d7.jpg)     | ![det-1](/test_data/res/d8.jpg) |![det-1](/test_data/res/d9.jpg) |
 | ![det-7](/test_data/res/u0.jpg) | ![det-7](/test_data/res/u1.jpg)     | ![det-1](/test_data/res/u2.jpg) | ![det-7](/test_data/res/u3.jpg) | ![det-7](/test_data/res/u4.jpg)     | ![det-1](/test_data/res/u5.jpg) | ![det-7](/test_data/res/u6.jpg) | ![det-7](/test_data/res/u7.jpg)     | ![det-1](/test_data/res/u8.jpg) |![det-1](/test_data/res/u9.jpg) |
