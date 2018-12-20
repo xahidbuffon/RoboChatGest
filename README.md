@@ -18,10 +18,9 @@ For testing on a diver-tracking video or sequences of images, run the [test_dive
 
 ### Video demo: https://youtu.be/cHQ9E-yRSho
 
-| frame t | frame t+n | frame t+2n | 
-|:--------------------|:----------------|:----------------
-| ![det-86](/test_data/res/86.jpg)     | ![det-96](/test_data/res/96.jpg) |   ![det-106](/test_data/res/106.jpg) | 
-| ![det-1118](/test_data/res/1118.jpg)     | ![det-1138](/test_data/res/1138.jpg) |   ![det-1158](/test_data/res/1158.jpg) | 
+| {Pic, Pic} | {Five, Two} | {Zero, Ok} | {Left, Left} | 
+|:--------------------|:----------------|:----------------|:----------------
+| ![det-86](/test_data/res/0.jpg)     | ![det-96](/test_data/res/5.jpg) |   ![det-106](/test_data/res/7.jpg) | ![det-1118](/test_data/res/10.jpg)     | 
 
 
 

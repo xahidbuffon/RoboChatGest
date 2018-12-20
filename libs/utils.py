@@ -69,7 +69,7 @@ def draw_box_label(img, bbox_cv2, bbox_class="diver", box_color=(0, 0, 255), sho
 
 
 
-def draw_boxes_and_labels(img, localized_objs, obj_classes, box_color=(0, 255, 255)):
+def draw_boxes_and_labels(img, localized_objs, obj_classes, box_color=(0, 100, 255)):
     """
     vizializer that draws boxes and labels on the localized objects
     inputs:

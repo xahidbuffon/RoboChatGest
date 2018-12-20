@@ -15,17 +15,12 @@ from libs.gestureRecognizer import HandGestRecognition
 from libs.utils import draw_boxes_and_labels, check_file_ext
 
 
-""" for testing hand-gesture recognition
-"""
-
-
 if __name__ == '__main__':
     """ for testing hand-gesture recognition (both hands)
             > use argument --test_vid to test video or sequence of images
         other arguments:
             --im_dir >> path of image folder
             --vid    >> path of the test video file (0 for webcam)
-            --image_ext >> image extension
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('--im_dir', required=False, dest='im_dir', type=str, default='test_data/ims', help='Folder containing images')
@@ -38,21 +33,27 @@ if __name__ == '__main__':
 
     if args.test_vid:
         # test a sequence of images
+        i=0
         IMAGE_PATHS = [os.path.join(args.im_dir, f) for f in os.listdir(args.im_dir) if check_file_ext(f)]
         IMAGE_PATHS.sort(key=lambda f: int(filter(str.isdigit, f)))
         for im_file in IMAGE_PATHS:
             frame = cv2.imread(im_file)
+            frame = cv2.resize(frame, (500, 375))
             localized_objs = gest_recog.Detect_localized_gest(frame) 
             if len(localized_objs)>0:
                 frame = draw_boxes_and_labels(frame, localized_objs, obj_classes)
 
-            cv2.imshow("Annotated Output", frame)
-            cv2.waitKey(1000) 
+            #cv2.imshow("Annotated Output", frame)
+            #cv2.waitKey(1000) 
+            cv2.imwrite(str(i)+'.jpg', frame)
+            i += 1
           
     else:
         # test on a video file 
         counter=0   
-        # try to use the webcam if vid is not provided
+        """try to use the webcam if vid is not provided. should detect gestures with
+             reasonable accuracy although the model is only trained on underwater images!
+        """
         vid_src = 0 if args.vid=='' else args.vid
         cap = cv2.VideoCapture(vid_src)
         while(cap.isOpened()):
