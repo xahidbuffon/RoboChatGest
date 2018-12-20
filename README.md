@@ -1,4 +1,4 @@
-This is a container for an autonomous diver-following project. Deep object detection models are used for diver (and other objects such as ROV) detection. A simplified version of that is utilized for autonomous tracking (and following) of a (single) diver by an underwater robot. The ROS version, tested on Aqua-8 robot, is provided in the robo_chat_gest folder.
+This is a container for a hand gesture-based human-robot communication framework named RoboChatGest. This allows divers to use a set of simple hand gestures to communicate instructions to an underwater robot and recinfigure dynamic parameters during a mission. The ROS version, tested on Aqua-8 robot, is provided in the robo_chat_gest folder.
 
 - Model and dataset information:  https://onlinelibrary.wiley.com/doi/full/10.1002/rob.21837 
 - RoboChatGest programming rules:  https://ieeexplore.ieee.org/document/8461197
@@ -21,11 +21,11 @@ Run the [test_detector.py](test_detector.py) file to test other images or video 
 | {Pic, Pic} | {Five, Two} | {Zero, Ok} | {Left, Left} | 
 |:--------------------|:----------------|:----------------|:----------------
 | ![det-86](/test_data/res/0.jpg)     | ![det-96](/test_data/res/5.jpg) |   ![det-106](/test_data/res/7.jpg) | ![det-1118](/test_data/res/10.jpg)     | 
-#### Video demos: https://youtu.be/cHQ9E-yRSho, https://youtu.be/evPMcn_YhhY, https://youtu.be/An4IdMV_VtU
+#### Demos: https://youtu.be/cHQ9E-yRSho
 
 
 ### Testing the RoboChatGest 
-
+#### Demos: https://youtu.be/evPMcn_YhhY, https://youtu.be/An4IdMV_VtU
 
 
 
