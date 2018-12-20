@@ -25,14 +25,26 @@ Use the [test_detector.py](test_detector.py) file to test other images or video 
 
 
 ### Testing the RoboChatGest 
-| Menue mode | Token: SELECT MENUE | Token: SELECT MENUE | Token: SELECT MENUE 3 |
-|:--------------------|:----------------|:----------------|:----------------
-| ![det-24](/test_data/res/m1.jpg) | ![det-24](/test_data/res/m3.jpg)     | ![det-25](/test_data/res/m5.jpg) |   ![det-26](/test_data/res/m10.jpg) | 
+The sequence of hand gestures from both hands can be used to generate instructions in order to:
+
+- Instruct the robot to STOP its current task and SWITCH to other (predefined) tasks
+- Continue (COTD) current program, but UPDATE values of (predefined) parameters
+
+Details about the hand gesture to instruction mapping can be found in the paper. We keep chanding these mapping rules based on specific application requirements; it takes a simple finite state machine to interpret the sequence of hand gestures differently. See [instructionGenerator.py](/libs/instructionGenerator.py) for details. 
 
 
 | RoboChatGest mode | STOP HOVER | Token: STOP HOVER | Token: STOP HOVER GO |
 |:--------------------|:----------------|:----------------|:----------------
 | ![det-24](/test_data/res/r1.jpg) | ![det-24](/test_data/res/r3.jpg)     | ![det-25](/test_data/res/r7.jpg) |   ![det-26](/test_data/res/r11.jpg) | 
+
+
+We also use a different state machine for menue selection, i.e., switching between 5 menue options in Aqua robot (see [menueSelector.py](/libs/menueSelector.py) for details); to change a menue, the {left, right} hand gesture tokens are: {Ok, Ok}, {Menue #, Menue #}. For instance: 
+
+| Menue mode | Token: SELECT MENUE | Token: SELECT MENUE | Token: SELECT MENUE 3 |
+|:--------------------|:----------------|:----------------|:----------------
+| ![det-24](/test_data/res/m1.jpg) | ![det-24](/test_data/res/m3.jpg)     | ![det-25](/test_data/res/m5.jpg) |   ![det-26](/test_data/res/m10.jpg) | 
+
+
 
 #### Demos: https://youtu.be/evPMcn_YhhY, https://youtu.be/An4IdMV_VtU
 
