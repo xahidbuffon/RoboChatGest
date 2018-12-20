@@ -18,21 +18,21 @@ The following set of 10 simple and intuitive hand gestures are used:
 Use the [test_detector.py](test_detector.py) file to test other images or video files of interest.
 
 
-| {Pic, Pic} | {Five, Two} | {Zero, Ok} |
-|:--------------------|:----------------|:----------------
-| ![det-21](/test_data/res/0.jpg)     | ![det-22](/test_data/res/5.jpg) |   ![det-23](/test_data/res/7.jpg) | 
+| {Pic, Pic} | {Five, Two} | {Zero, Ok} | {Left, Left}
+|:--------------------|:----------------|:----------------|:----------------
+| ![det-21](/test_data/res/0.jpg)     | ![det-22](/test_data/res/5.jpg) |   ![det-23](/test_data/res/7.jpg) |  ![det-23](/test_data/res/10.jpg) | 
 #### Demos: https://youtu.be/cHQ9E-yRSho
 
 
 ### Testing the RoboChatGest 
-| Menue mode triggered | Token: SELECT MENUE | Token: SELECT MENUE 3 |
+| Menue mode | Token: SELECT MENUE | Token: SELECT MENUE 3 |
 |:--------------------|:----------------|:----------------
 | ![det-24](/test_data/res/m3.jpg)     | ![det-25](/test_data/res/m5.jpg) |   ![det-26](/test_data/res/m10.jpg) | 
 
 
-| STOP HOVER | Token: STOP HOVER | Token: STOP HOVER GO |
-|:--------------------|:----------------|:----------------
-| ![det-24](/test_data/res/r3.jpg)     | ![det-25](/test_data/res/r7.jpg) |   ![det-26](/test_data/res/r11.jpg) | 
+| RoboChatGest mode | STOP HOVER | Token: STOP HOVER | Token: STOP HOVER GO |
+|:--------------------|:----------------|:----------------|:----------------
+| ![det-24](/test_data/res/r1.jpg) | ![det-24](/test_data/res/r3.jpg)     | ![det-25](/test_data/res/r7.jpg) |   ![det-26](/test_data/res/r11.jpg) | 
 
 #### Demos: https://youtu.be/evPMcn_YhhY, https://youtu.be/An4IdMV_VtU
 
