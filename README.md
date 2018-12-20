@@ -4,15 +4,17 @@ This is a container for an autonomous diver-following project. Deep object detec
 - Dataset collection information:  https://onlinelibrary.wiley.com/doi/full/10.1002/rob.21837 
 - A trained frozen model: provided in model_data folder
 
-## Testing the detector
-For testing individual images, run the [test_detector.py](test_detector.py) file. Change the image directory (im_dir) to test other images of interest.
+## Hand gestures 
+The following set of 10 simple and intuitive hand gestures are used:
 
 | Zero | One | Two | Three | Four | Five | Left | Right | Ok | Pic |  
 |:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|
-| ![det-7](/test_data/res/0.jpg) | ![det-7](/test_data/res/0.jpg)     | ![det-1](/test_data/res/0.jpg) | ![det-7](/test_data/res/0.jpg) | ![det-7](/test_data/res/0.jpg)     | ![det-1](/test_data/res/0.jpg) | ![det-7](/test_data/res/0.jpg) | ![det-7](/test_data/res/0.jpg)     | ![det-1](/test_data/res/0.jpg) |![det-1](/test_data/res/0.jpg) |
+| ![det-7](/test_data/res/d0.jpg) | ![det-7](/test_data/res/d1.jpg)     | ![det-1](/test_data/res/d2.jpg) | ![det-7](/test_data/res/d3.jpg) | ![det-7](/test_data/res/d4.jpg)     | ![det-1](/test_data/res/d5.jpg) | ![det-7](/test_data/res/d6.jpg) | ![det-7](/test_data/res/d7.jpg)     | ![det-1](/test_data/res/d8.jpg) |![det-1](/test_data/res/d9.jpg) |
 
 
 
+## Testing the detector
+For testing individual images, run the [test_detector.py](test_detector.py) file. Change the image directory (im_dir) to test other images of interest.
 
 
 ### Video demo: https://youtu.be/cHQ9E-yRSho
