@@ -34,7 +34,7 @@ class HandGestRecognition():
         """
           initialize variables and flags
         """ 
-        self.data_dir = 'model_data/'
+        self.data_dir = 'model_data/tf_1.4/'
         self.min_score_thresh = 0.4
         self.CNN_init()
         
