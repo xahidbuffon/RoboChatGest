@@ -33,21 +33,17 @@ if __name__ == '__main__':
 
     if args.test_vid:
         # test a sequence of images
-        i=0
         IMAGE_PATHS = [os.path.join(args.im_dir, f) for f in os.listdir(args.im_dir) if check_file_ext(f)]
         IMAGE_PATHS.sort(key=lambda f: int(filter(str.isdigit, f)))
         for im_file in IMAGE_PATHS:
             frame = cv2.imread(im_file)
-            frame = cv2.resize(frame, (500, 375))
             localized_objs = gest_recog.Detect_localized_gest(frame) 
             if len(localized_objs)>0:
                 frame = draw_boxes_and_labels(frame, localized_objs, obj_classes)
 
-            #cv2.imshow("Annotated Output", frame)
-            #cv2.waitKey(1000) 
-            cv2.imwrite(str(i)+'.jpg', frame)
-            i += 1
-          
+            cv2.imshow("Annotated Output", frame)
+            cv2.waitKey(1000) 
+                      
     else:
         # test on a video file 
         counter=0   
