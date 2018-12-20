@@ -37,7 +37,7 @@ For example, instructing the robot to 'STOP current task and HOVER' can be done 
 |:--------------------|:----------------|:----------------|:----------------
 | ![det-24](/test_data/res/r1.jpg) | ![det-24](/test_data/res/r3.jpg)     | ![det-25](/test_data/res/r7.jpg) |   ![det-26](/test_data/res/r11.jpg) | 
 
-Details about the hand gestures-to-instruction mapping can be found in the paper. We keep chanding these mapping rules based on specific application requirements; we use a simple Finite-State Machine (FSM) to implement a mapping. See [instructionGenerator.py](/libs/instructionGenerator.py) for details. We also use a different FSM for menue selection, i.e., for switching between five menue options in the Aqua robot (see [menueSelector.py](/libs/menueSelector.py) for details); to select a menue, the {left-hand, right-hand} gesture tokens are: {ok, ok}, {Menue #, Menue #}. For instance: 
+Details about the hand gestures-to-instruction mapping can be found in the paper. We keep chanding these mapping rules based on specific application requirements; we use a simple Finite-State Machine (FSM) to implement a mapping. See [instructionGenerator.py](/libs/instructionGenerator.py) for details. We also use a different FSM for menue selection, i.e., for switching between five menue options in the Aqua robot (see [menueSelector.py](/libs/menueSelector.py) for details); to select a menue, the {left-hand, right-hand} gesture tokens are: {ok, ok}, {menue #, menue #}. For instance: 
 
 | Menue mode | Token: SELECT MENUE | Token: SELECT MENUE | Token: SELECT MENUE 3 |
 |:--------------------|:----------------|:----------------|:----------------
