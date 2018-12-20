@@ -7,7 +7,7 @@ This is a container for a hand gesture-based human-robot communication framework
 ### Hand gestures 
 The following set of 10 simple and intuitive hand gestures are used:
 
-| Zero | One | Two | Three | Four | Five | Left | Right | Pic | Ok | 
+| zero | one | two | three | four | five | left | right | pic | ok | 
 |:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|
 | ![det-1](/test_data/res/d0.jpg) | ![det-5](/test_data/res/d1.jpg)     | ![det-9](/test_data/res/d2.jpg) | ![det-13](/test_data/res/d3.jpg) | ![det-17](/test_data/res/d4.jpg)     | ![det-2](/test_data/res/d5.jpg) | ![det-6](/test_data/res/d6.jpg) | ![det-10](/test_data/res/d7.jpg)     | ![det-14](/test_data/res/d8.jpg) |![det-18](/test_data/res/d9.jpg) |
 | ![det-3](/test_data/res/u0.jpg) | ![det-7](/test_data/res/u1.jpg)     | ![det-11](/test_data/res/u2.jpg) | ![det-15](/test_data/res/u3.jpg) | ![det-19](/test_data/res/u4.jpg)     | ![det-4](/test_data/res/u5.jpg) | ![det-8](/test_data/res/u6.jpg) | ![det-12](/test_data/res/u7.jpg)     | ![det-16](/test_data/res/u8.jpg) |![det-20](/test_data/res/u9.jpg) |
@@ -18,7 +18,7 @@ The following set of 10 simple and intuitive hand gestures are used:
 Use the [test_detector.py](test_detector.py) file to test other images or video files of interest.
 
 
-| {Pic, Pic} | {Five, Two} | {Zero, Ok} | {Left, Left}
+| {pic, pic} | {five, two} | {zero, ok} | {left, left}
 |:--------------------|:----------------|:----------------|:----------------
 | ![det-21](/test_data/res/0.jpg)     | ![det-22](/test_data/res/5.jpg) |   ![det-23](/test_data/res/7.jpg) |  ![det-23](/test_data/res/10.jpg) | 
 #### Demos: https://youtu.be/cHQ9E-yRSho
@@ -30,8 +30,8 @@ In RoboChatGest, the sequence of hand gestures are used to generate instructions
 - Parameter reconfiguration: CONTD current program, but UPDATE values of a (predefined) parameter
 
 For example, instructing the robot to 'STOP current task and HOVER' can be done as follows:
-- Start token for STOP current task {0, 0} + HOVER token {5, 5} + confirmation token {Ok, Ok}
-- Hence, {left, right} hand gesture tokens = {0, 0}, {5, 5}, {Ok, Ok} 
+- Start token for STOP current task {0, 0} + HOVER token {5, 5} + confirmation token {ok, ok}
+- Hence, {left-hand, right-hand} gesture tokens = {0, 0}, {5, 5}, {ok, ok} 
 
 | RoboChatGest mode | STOP HOVER | Token: STOP HOVER | Token: STOP HOVER GO |
 |:--------------------|:----------------|:----------------|:----------------
@@ -39,7 +39,7 @@ For example, instructing the robot to 'STOP current task and HOVER' can be done 
 
 Details about the hand gestures-to-instruction mapping can be found in the paper. We keep chanding these mapping rules based on specific application requirements; we use a simple Finite-State Machine (FSM) to implement a mapping. See [instructionGenerator.py](/libs/instructionGenerator.py) for details. 
 
-We also use a different FSM for menue selection, i.e., switching between 5 menue options in the Aqua robot (see [menueSelector.py](/libs/menueSelector.py) for details); to change a menue, the {left, right} hand gesture tokens are: {Ok, Ok}, {Menue #, Menue #}. For instance: 
+We also use a different FSM for menue selection, i.e., switching between 5 menue options in the Aqua robot (see [menueSelector.py](/libs/menueSelector.py) for details); to change a menue, the {left-hand, right-hand} gesture tokens are: {ok, ok}, {Menue #, Menue #}. For instance: 
 
 | Menue mode | Token: SELECT MENUE | Token: SELECT MENUE | Token: SELECT MENUE 3 |
 |:--------------------|:----------------|:----------------|:----------------
