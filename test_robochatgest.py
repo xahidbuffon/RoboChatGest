@@ -23,10 +23,10 @@ if __name__ == '__main__':
             --vid    >> path of the test video file (0 for webcam)
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('--im_dir', required=False, dest='im_dir', type=str, default='test_data/ins_test/hover', help='Folder containing images')
+    parser.add_argument('--im_dir', required=False, dest='im_dir', type=str, default='test_data/select_menues/3', help='Folder containing images')
     parser.add_argument('--vid', required=False, dest='vid', type=str, default='', help='Video file')
     parser.add_argument('--test_vid', required=False, dest='test_vid', type=bool, default=False, help='Test video or images')
-    parser.add_argument('--menue_mode', required=False, dest='menue_mode', type=bool, default=False, help='menue_mode or robo_chat_gest mode')
+    parser.add_argument('--menue_mode', required=False, dest='menue_mode', type=bool, default=True, help='menue_mode or robo_chat_gest mode')
     args = parser.parse_args()
 
     robochat_gest = RoboChatGest_pipeline(args.menue_mode)

@@ -25,9 +25,9 @@ Use the [test_detector.py](test_detector.py) file to test other images or video 
 
 
 ### Testing the RoboChatGest 
-| Menue mode | Token: SELECT MENUE | Token: SELECT MENUE 3 |
-|:--------------------|:----------------|:----------------
-| ![det-24](/test_data/res/m3.jpg)     | ![det-25](/test_data/res/m5.jpg) |   ![det-26](/test_data/res/m10.jpg) | 
+| Menue mode | Token: SELECT MENUE | Token: SELECT MENUE | Token: SELECT MENUE 3 |
+|:--------------------|:----------------|:----------------|:----------------
+| ![det-24](/test_data/res/m1.jpg) | ![det-24](/test_data/res/m3.jpg)     | ![det-25](/test_data/res/m5.jpg) |   ![det-26](/test_data/res/m10.jpg) | 
 
 
 | RoboChatGest mode | STOP HOVER | Token: STOP HOVER | Token: STOP HOVER GO |
