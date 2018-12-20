@@ -15,14 +15,13 @@ The following set of 10 simple and intuitive hand gestures are used:
 
 
 ### Testing the detector
-For testing individual images, run the [test_detector.py](test_detector.py) file. Change the image directory (im_dir) to test other images of interest.
+Run the [test_detector.py](test_detector.py) file to test other images or video files of interest.
 
-
-#### Video demo: https://youtu.be/cHQ9E-yRSho
 
 | {Pic, Pic} | {Five, Two} | {Zero, Ok} | {Left, Left} | 
 |:--------------------|:----------------|:----------------|:----------------
 | ![det-86](/test_data/res/0.jpg)     | ![det-96](/test_data/res/5.jpg) |   ![det-106](/test_data/res/7.jpg) | ![det-1118](/test_data/res/10.jpg)     | 
+#### Video demos: https://youtu.be/cHQ9E-yRSho, https://youtu.be/evPMcn_YhhY, https://youtu.be/An4IdMV_VtU
 
 
 ### Testing the RoboChatGest 
