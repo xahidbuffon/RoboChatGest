@@ -18,9 +18,9 @@ The following set of 10 simple and intuitive hand gestures are used:
 Use the [test_detector.py](test_detector.py) file to test other images or video files of interest.
 
 
-| {Pic, Pic} | {Five, Two} | {Zero, Ok} | {Left, Left} | 
-|:--------------------|:----------------|:----------------|:----------------
-| ![det-86](/test_data/res/0.jpg)     | ![det-96](/test_data/res/5.jpg) |   ![det-106](/test_data/res/7.jpg) | ![det-1118](/test_data/res/10.jpg)     | 
+| {Pic, Pic} | {Five, Two} | {Zero, Ok} |
+|:--------------------|:----------------|:----------------
+| ![det-86](/test_data/res/0.jpg)     | ![det-96](/test_data/res/5.jpg) |   ![det-106](/test_data/res/7.jpg) |  
 #### Demos: https://youtu.be/cHQ9E-yRSho
 
 
