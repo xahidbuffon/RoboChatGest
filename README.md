@@ -29,6 +29,11 @@ Use the [test_detector.py](test_detector.py) file to test other images or video 
 |:--------------------|:----------------|:----------------
 | ![det-24](/test_data/res/m3.jpg)     | ![det-25](/test_data/res/m5.jpg) |   ![det-26](/test_data/res/m10.jpg) | 
 
+
+| STOP HOVER | Token: STOP HOVER | Token: STOP HOVER GO |
+|:--------------------|:----------------|:----------------
+| ![det-24](/test_data/res/r3.jpg)     | ![det-25](/test_data/res/r7.jpg) |   ![det-26](/test_data/res/r11.jpg) | 
+
 #### Demos: https://youtu.be/evPMcn_YhhY, https://youtu.be/An4IdMV_VtU
 
 
