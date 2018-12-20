@@ -13,7 +13,6 @@ import sys
 import os
 import argparse
 import cv2
-import yaml
 
 # local libraries
 from gestureRecognizer import HandGestRecognition

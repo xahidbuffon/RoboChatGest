@@ -14,9 +14,6 @@ currently we are using SSD based model that was described in this paper:
 import os
 import sys
 import cv2
-import yaml
-import rospy
-import roslib
 import argparse
 import numpy as np
 import tensorflow as tf
