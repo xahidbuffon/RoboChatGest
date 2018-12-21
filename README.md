@@ -2,7 +2,7 @@ This repository contains a hand gesture-based human-robot communication framewor
  
 - RoboChatGest programming rules:  https://ieeexplore.ieee.org/document/8461197
 - Model and dataset information:  https://onlinelibrary.wiley.com/doi/full/10.1002/rob.21837
-- A trained frozen model: provided in model_data folder
+- A frozen trained model: provided in model_data folder
 - Important packages: Python 2.7, OpenCV 3, TensorFlow 1.11.0 (with object detection API) 
 
 ### Hand gestures 
@@ -32,7 +32,7 @@ In RoboChatGest, the sequence of hand gestures are used to generate instructions
 
 For instance, instructing the robot to 'STOP current task and HOVER' can be done as follows:
 - Start token for STOP current task {0, 0} + HOVER token {5, 5} + confirmation token {ok, ok}
-- Hence, the sequence {left-hand, right-hand} gesture tokens are = {0, 0}, {5, 5}, {ok, ok} 
+- Hence, the {left-hand, right-hand} gesture tokens are = {0, 0}, {5, 5}, {ok, ok} 
 
 | RoboChatGest mode | STOP HOVER | Token: STOP HOVER | Token: STOP HOVER GO |
 |:--------------------|:----------------|:----------------|:----------------
