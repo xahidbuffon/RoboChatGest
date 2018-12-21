@@ -1,9 +1,9 @@
-This is a container for a hand gesture-based human-robot communication framework named RoboChatGest. This allows divers to use a set of simple hand gestures to communicate instructions to an underwater robot and dynamically reconfigure program parameters during a mission. The ROS version, tested on Aqua-8 robot, is provided in the robo_chat_gest folder.
-
-- Model and dataset information:  https://onlinelibrary.wiley.com/doi/full/10.1002/rob.21837 
+This repository contains a hand gesture-based human-robot communication framework named RoboChatGest. This allows divers to use a set of simple hand gestures to communicate instructions to an underwater robot and dynamically reconfigure program parameters during a mission. The ROS version, tested on Aqua-8 robot, is provided in the robo_chat_gest folder.
+ 
 - RoboChatGest programming rules:  https://ieeexplore.ieee.org/document/8461197
+- Model and dataset information:  https://onlinelibrary.wiley.com/doi/full/10.1002/rob.21837
 - A trained frozen model: provided in model_data folder
-- Important packages: Python 2.7, OpenCV 3, SciPy 1.1.0, TensorFlow 1.11.0 (with object detection API) 
+- Important packages: Python 2.7, OpenCV 3, TensorFlow 1.11.0 (with object detection API) 
 
 ### Hand gestures 
 The following set of 10 simple and intuitive hand gestures are used:
@@ -16,7 +16,7 @@ The following set of 10 simple and intuitive hand gestures are used:
 
 
 ### Testing the detector
-Use the [test_detector.py](test_detector.py) file to test other images or video files of interest.
+Use the [test_detector.py](test_detector.py) file to test images or video files of interest.
 
 
 | {pic, pic} | {five, two} | {zero, ok} | {left, left}
@@ -28,17 +28,17 @@ Use the [test_detector.py](test_detector.py) file to test other images or video 
 ### Testing the RoboChatGest 
 In RoboChatGest, the sequence of hand gestures are used to generate instructions for:
 - Task switching: STOP current task and SWITCH to another (predefined) task
-- Parameter reconfiguration: CONTD current program, but UPDATE values of a (predefined) parameter
+- Parameter reconfiguration: CONTD. current program, but UPDATE values of a (predefined) parameter
 
 For instance, instructing the robot to 'STOP current task and HOVER' can be done as follows:
 - Start token for STOP current task {0, 0} + HOVER token {5, 5} + confirmation token {ok, ok}
-- Hence, {left-hand, right-hand} gesture tokens = {0, 0}, {5, 5}, {ok, ok} 
+- Hence, the sequence {left-hand, right-hand} gesture tokens are = {0, 0}, {5, 5}, {ok, ok} 
 
 | RoboChatGest mode | STOP HOVER | Token: STOP HOVER | Token: STOP HOVER GO |
 |:--------------------|:----------------|:----------------|:----------------
 | ![det-24](/test_data/res/r1.jpg) | ![det-24](/test_data/res/r3.jpg)     | ![det-25](/test_data/res/r7.jpg) |   ![det-26](/test_data/res/r11.jpg) | 
 
-Details about the hand gestures-to-instruction mapping can be found in the paper. We keep chanding these mapping rules based on specific application requirements; we use a simple Finite-State Machine (FSM) to implement a mapping. See [instructionGenerator.py](/libs/instructionGenerator.py) for details. We also use a different FSM for menue selection, i.e., for switching between five menue options in the Aqua robot (see [menueSelector.py](/libs/menueSelector.py) for details); to select a menue, the {left-hand, right-hand} gesture tokens are: {ok, ok}, {menue #, menue #}. For example: 
+Details about the hand gestures-to-instruction mapping can be found in the paper. A simple Finite-State Machine (FSM) is used for implementing the mapping rules, which we keep changing based on various application requirements (see [instructionGenerator.py](/libs/instructionGenerator.py) for details). We also use a different FSM for menue selection, i.e., for switching between (five) menue options in the Aqua robot (see [menueSelector.py](/libs/menueSelector.py) for details); to select a menue, the {left-hand, right-hand} gesture tokens are: {ok, ok}, {menue #, menue #}. For example: 
 
 | Menue mode | Token: SELECT MENUE | Token: SELECT MENUE | Token: SELECT MENUE 3 |
 |:--------------------|:----------------|:----------------|:----------------
