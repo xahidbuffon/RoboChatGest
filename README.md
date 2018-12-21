@@ -2,7 +2,7 @@ This repository contains a hand gesture-based human-robot communication framewor
  
 - RoboChatGest programming rules:  https://ieeexplore.ieee.org/document/8461197
 - Model and dataset information:  https://onlinelibrary.wiley.com/doi/full/10.1002/rob.21837
-- A frozen trained model: provided in model_data folder
+- The frozen graph of a trained model: provided in model_data folder
 - Important packages: Python 2.7, OpenCV 3, TensorFlow 1.11.0 (with object detection API) 
 
 ### Hand gestures 
