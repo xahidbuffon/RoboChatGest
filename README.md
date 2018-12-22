@@ -1,4 +1,4 @@
-This repository contains a hand gesture-based human-robot communication framework named RoboChatGest. This allows divers to use a set of simple hand gestures to communicate instructions to an underwater robot and dynamically reconfigure program parameters during a mission. The ROS version, tested on Aqua-8 robot, is provided in the robo_chat_gest folder.
+This repository contains a hand gesture-based human-robot communication framework named RoboChatGest. This allows divers to use a set of simple hand gestures to communicate instructions to an underwater robot and dynamically reconfigure program parameters during a mission. The ROS version, tested on Aqua 8 robot, is provided in the robo_chat_gest folder.
  
 - RoboChatGest programming rules:  https://ieeexplore.ieee.org/document/8461197
 - Model and dataset information:  https://onlinelibrary.wiley.com/doi/full/10.1002/rob.21837
@@ -26,7 +26,7 @@ Use the [test_detector.py](test_detector.py) file to test images or video files 
 
 
 ### Testing the RoboChatGest 
-In RoboChatGest, the sequence of hand gestures are used to generate instructions for:
+In RoboChatGest, a sequence of hand gestures is used to generate instructions for:
 - Task switching: STOP current task and SWITCH to another (predefined) task
 - Parameter reconfiguration: CONTD. current program, but UPDATE values of a (predefined) parameter
 
@@ -38,7 +38,7 @@ For instance, instructing the robot to 'STOP current task and HOVER' can be done
 |:--------------------|:----------------|:----------------|:----------------
 | ![det-24](/test_data/res/r1.jpg) | ![det-24](/test_data/res/r3.jpg)     | ![det-25](/test_data/res/r7.jpg) |   ![det-26](/test_data/res/r11.jpg) | 
 
-Details about the hand gestures-to-instruction mapping can be found in the paper. A simple Finite-State Machine (FSM) is used for implementing the mapping rules, which we keep changing based on various application requirements (see [instructionGenerator.py](/libs/instructionGenerator.py) for details). We also use a different FSM for menue selection, i.e., for switching between (five) menue options in the Aqua robot (see [menueSelector.py](/libs/menueSelector.py) for details); to select a menue, the {left-hand, right-hand} gesture tokens are: {ok, ok}, {menue #, menue #}. For example: 
+Details about the hand gestures-to-instruction mapping can be found in the paper. A simple Finite-State Machine (FSM) is used for implementing the mapping rules, which is modified based on various application requirements (see [instructionGenerator.py](/libs/instructionGenerator.py) for details). We also use a different FSM for menu selection, i.e., for switching between (five) menu3 options in the Aqua robot (see [menueSelector.py](/libs/menueSelector.py) for details); to select a menu, the {left-hand, right-hand} gesture tokens are: {ok, ok}, {menu #, menu #}. For example: 
 
 | Menue mode | Token: SELECT MENUE | Token: SELECT MENUE | Token: SELECT MENUE 3 |
 |:--------------------|:----------------|:----------------|:----------------
@@ -52,7 +52,7 @@ Details about the hand gestures-to-instruction mapping can be found in the paper
 
 ### ROS version
 - The robo_chat_gest folder contain the ROS-kinetic package version 
-- This version is currently running on the Aqua MinneBot robot (more details: http://irvlab.cs.umn.edu)
+- This version is currently running on the Aqua 8 (MinneBot) robot (more details: http://irvlab.cs.umn.edu)
 - Feel free to cite the papers if you find anything useful!
 
 ```
