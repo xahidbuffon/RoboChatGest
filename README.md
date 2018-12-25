@@ -40,7 +40,7 @@ For instance, instructing the robot to 'STOP current task and HOVER' can be done
 
 Details about the hand gestures-to-instruction mapping can be found in the paper. A simple Finite-State Machine (FSM) is used for implementing the mapping rules, which is modified based on various application requirements (see [instructionGenerator.py](/libs/instructionGenerator.py) for details). We also use a different FSM for menu selection, i.e., for switching between (five) menu3 options in the Aqua robot (see [menueSelector.py](/libs/menueSelector.py) for details); to select a menu, the {left-hand, right-hand} gesture tokens are: {ok, ok}, {menu #, menu #}. For example: 
 
-| Menue mode | Token: SELECT MENUE | Token: SELECT MENUE | Token: SELECT MENUE 3 |
+| Menu mode | Token: SELECT MENU | Token: SELECT MENU | Token: SELECT MENU 3 |
 |:--------------------|:----------------|:----------------|:----------------
 | ![det-24](/test_data/res/m1.jpg) | ![det-24](/test_data/res/m3.jpg)     | ![det-25](/test_data/res/m5.jpg) |   ![det-26](/test_data/res/m10.jpg) | 
 
