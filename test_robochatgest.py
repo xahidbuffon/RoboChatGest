@@ -26,10 +26,10 @@ if __name__ == '__main__':
     parser.add_argument('--im_dir', required=False, dest='im_dir', type=str, default='test_data/ins_test/hover', help='Folder containing images')
     parser.add_argument('--vid', required=False, dest='vid', type=str, default='', help='Video file')
     parser.add_argument('--test_vid', required=False, dest='test_vid', type=bool, default=False, help='Test video or images')
-    parser.add_argument('--menue_mode', required=False, dest='menue_mode', type=bool, default=False, help='menue_mode or robo_chat_gest mode')
+    parser.add_argument('--menu_mode', required=False, dest='menu_mode', type=bool, default=False, help='menu_mode or robo_chat_gest mode')
     args = parser.parse_args()
 
-    robochat_gest = RoboChatGest_pipeline(args.menue_mode)
+    robochat_gest = RoboChatGest_pipeline(args.menu_mode)
 
     i=0
     if not args.test_vid:

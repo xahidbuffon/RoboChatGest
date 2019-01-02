@@ -17,14 +17,14 @@ import cv2
 # local libraries
 from gestureRecognizer import HandGestRecognition
 from instructionGenerator import InstructionGeneration
-from menueSelector import MenueSelection
+from menueSelector import MenuSelection
 from utils import draw_boxes_and_labels, write_instructions
 
 class RoboChatGest_pipeline:
         """ 
            Class for generating hand-gesture based instructions using robo_chat_gest 
         """
-	def __init__(self, menue_mode=False):
+	def __init__(self, menu_mode=False):
                 # instance for hand gesture recognition
 		self.gest_rec = HandGestRecognition()
                 # we have 10 classes (see the paper ieeexplore.ieee.org/document/8543168)
@@ -32,13 +32,13 @@ class RoboChatGest_pipeline:
                 self.obj_classes = { 0:'Zero',1:'One',2:'Two',3:'Three',4:'Four',5:'Five',6:'Left',7:'Right',8:'Pic',9:'Ok'}
                 # instance for instruction generation
 		self.ins = InstructionGeneration(self.classes)
-                # flags for Aqua menue selection
-		self.men_sel = MenueSelection(self.classes)
+                # flags for Aqua menu selection
+		self.men_sel = MenuSelection(self.classes)
 
-                if menue_mode: 
-			self.menue_mode, self.robo_gest_mode = True, False
+                if menu_mode: 
+			self.menu_mode, self.robo_gest_mode = True, False
 		else:
-			self.menue_mode, self.robo_gest_mode = False, True    
+			self.menu_mode, self.robo_gest_mode = False, True    
 		self.use_single_hand = False
 			
 
@@ -62,14 +62,14 @@ class RoboChatGest_pipeline:
 			if self.robo_gest_mode: # ROBO_GEST mode
                                 # camera(left, right) == person(right, left)
 				get_token, done_ = self.ins.decode(right_token, left_token)
-			elif self.menue_mode: # Menue Selection mode
+			elif self.menu_mode: # Menu Selection mode
 				get_token, done_ = self.men_sel.decode(right_token, left_token)
                         else: pass
 
                         if (not get_token or get_token != ''): 
 	                        img = write_instructions(img, get_token)
 				if done_:
-					#>> Here we perform the operations/service calls to change the menue
+					#>> Here we perform the operations/service calls to change the menu
                                         print 
                                         print ("Decoded Instruction: {0}".format(get_token))
                                         print
