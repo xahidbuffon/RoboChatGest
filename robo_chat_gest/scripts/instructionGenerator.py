@@ -1,8 +1,10 @@
 #!/usr/bin/env python
+
 """
 Maintainer: Jahid (email: islam034@umn.edu)
 Interactive Robotics and Vision Lab
 http://irvlab.cs.umn.edu/
+
 
 Class for generating a menue using {left, right} tokens from hand gestures
 """

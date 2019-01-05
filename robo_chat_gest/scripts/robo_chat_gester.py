@@ -41,6 +41,7 @@ class RoboChatGest_pipeline:
 		self.gest_rec = HandGestRecognition()
                 # we have 10 classes (see the paper ieeexplore.ieee.org/document/8543168)
 		self.classes = ['0', '1', '2', '3', '4', '5', 'left', 'right', 'pic','ok']
+                self.obj_classes = { 0:'Zero',1:'One',2:'Two',3:'Three',4:'Four',5:'Five',6:'Left',7:'Right',8:'Pic',9:'Ok'}
                 # instance for instruction generation
 		self.ins = InstructionGeneration(self.classes)
                 # flags for Aqua menue selection
@@ -77,7 +78,7 @@ class RoboChatGest_pipeline:
 
 			if self.publish_image:
                                 # to visualize detection, publish this
-				self.ProcessedRaw = rospy.Publisher('/gestProg/out_image', Image, queue_size=10)
+				self.ProcessedRaw = rospy.Publisher('/robo_chat_gest/image', Image, queue_size=10)
 			try:
 				rospy.spin()
 			except KeyboardInterrupt:
@@ -154,6 +155,10 @@ class RoboChatGest_pipeline:
 						self.tags_pub.publish(msg)
 						print ('***** Menue selected :: {0}'.format(menue_selected))
                                                 print
+
+			if (self.bench_test or self.publish_image):
+				localised_objs = [(left_token, left_box), (right_token, right_box)]
+				self.draw_boxes_and_labels(localised_objs)
 		
 
 
@@ -166,6 +171,20 @@ class RoboChatGest_pipeline:
 
 
 
+	def draw_boxes_and_labels(self, localised_objs, box_color=(0, 255, 255)):
+		"""
+		   vizializer that draws boxes and labels on the localized objects
+			> localized_objs: list of tupples (class id, box)  
+		"""
+		for (i, bbox_cv2) in localised_objs:
+			# Draw the object boxes
+			left, right, top, bottom = bbox_cv2[0], bbox_cv2[1], bbox_cv2[2], bbox_cv2[3]
+			cv2.rectangle(self.original, (left, top), (right, bottom), box_color, 4)
+			# Draw the labels
+			top2 = 0 if top<40 else top-40
+                        cv2.rectangle(self.original, (left, top2), (right, top), box_color, -1, 1)
+			cv2.putText(self.original, self.obj_classes[i], (left, top2+20), 
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 3)
 
 		
 

@@ -1,8 +1,10 @@
 #!/usr/bin/env python
+
 """
 Maintainer: Jahid (email: islam034@umn.edu)
 Interactive Robotics and Vision Lab
 http://irvlab.cs.umn.edu/
+
 
 Hand gesture based programming using robo_chat_gest
 >> relevant papers: 

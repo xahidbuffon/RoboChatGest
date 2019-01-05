@@ -1,8 +1,10 @@
 #! /usr/bin/env python
+
 """
 Maintainer: Jahid (email: islam034@umn.edu)
 Interactive Robotics and Vision Lab
 http://irvlab.cs.umn.edu/
+
 
 Class for detecting left and right hand-gestures using deep object detection model
 currently we are using SSD based model that was described in this paper: 
@@ -34,7 +36,6 @@ class HandGestRecognition():
         """
           initialize variables and flags
         """ 
-        #self.data_dir = '/home/aqua/model_data_/robo_gest_cnn/'
         self.data_dir = '/home/aqua/model_data_/robo_gest_ssd/'
         self.min_score_thresh = 0.4
         self.CNN_init()
