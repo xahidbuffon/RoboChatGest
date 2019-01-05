@@ -8,7 +8,7 @@ set_RoboGest_mode_: False
 set_Bench_Test_: False
 
 # for publishing output images
-set_Publish_Image_: False
+set_Publish_Image_: True
 
 # use gestures from one hand
 # this has to be false if set_RoboGest_mode_ = True
