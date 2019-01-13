@@ -21,7 +21,7 @@ Use the [test_detector.py](test_detector.py) file to test images or video files 
 
 | {pic, pic} | {five, two} | {zero, ok} | {left, left}
 |:--------------------|:----------------|:----------------|:----------------
-| ![det-21](/test_data/res/0.jpg)     | ![det-22](/test_data/res/5.jpg) |   ![det-23](/test_data/res/7.jpg) |  ![det-23](/test_data/res/10.jpg) | 
+| ![det-21](/test_data/res/7.jpg)     | ![det-22](/test_data/res/5.jpg) |   ![det-23](/test_data/res/10.jpg) |  ![det-23](/test_data/res/0.jpg) | 
 #### Demos: https://youtu.be/cHQ9E-yRSho
 
 
