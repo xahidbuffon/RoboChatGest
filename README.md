@@ -47,8 +47,9 @@ Details about the hand gestures-to-instruction mapping can be found in the paper
 
 
 #### Demos: 
-- Pool test (STOP, CONTD): https://youtu.be/evPMcn_YhhY
-- Detector on a validation set: https://youtu.be/An4IdMV_VtU
+- pool-test (MENU selection): https://youtu.be/OANhTgPCkQw
+- pool-test (STOP, CONTD): https://youtu.be/evPMcn_YhhY
+- testing the detector on a validation set: https://youtu.be/An4IdMV_VtU
 
 
 
