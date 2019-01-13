@@ -46,7 +46,9 @@ Details about the hand gestures-to-instruction mapping can be found in the paper
 
 
 
-#### Demos: https://youtu.be/evPMcn_YhhY, https://youtu.be/An4IdMV_VtU
+#### Demos: 
+- https://youtu.be/evPMcn_YhhY
+- https://youtu.be/An4IdMV_VtU
 
 
 
