@@ -44,11 +44,6 @@ class RoboChatGest_pipeline:
                 self.obj_classes = { 0:'Zero',1:'One',2:'Two',3:'Three',4:'Four',5:'Five',6:'Left',7:'Right',8:'Pic',9:'Ok'}
                 # instance for instruction generation
 		self.ins = InstructionGeneration(self.classes)
-                # flags for Aqua menue selection
-		self.men_sel = MenueSelection(self.classes)
-		self.menue_map = {'0':0, '1':1, '2':2, '3':3, '4':4, '5':5}
-
-		self.frame_no = 0
                 
                 with open('/home/aqua/catkin_overlay_ws/src/robo_chat_gest/data/robo_chat_gest_params.yaml', 'r') as run_param_f:
                         run_param_dict = yaml.load(run_param_f)
@@ -57,6 +52,10 @@ class RoboChatGest_pipeline:
 		self.bench_test = run_param_dict['set_Bench_Test_']
 		self.publish_image = run_param_dict['set_Publish_Image_']
 		self.use_single_hand = run_param_dict['use_Single_Hand_Gestures_only'] 
+
+                # flags for Aqua menue selection
+		self.men_sel = MenueSelection(self.classes, self.use_single_hand)
+		self.menue_map = {'0':0, '1':1, '2':2, '3':3, '4':4, '5':5}
          
 		#self.menue_mode = rospy.get_param('~set_Menue_mode_')
 		#self.robo_gest_mode = rospy.get_param('~set_RoboGest_mode_')
@@ -75,6 +74,7 @@ class RoboChatGest_pipeline:
 
                         # this is the publisher for aqua tags (menue selection purpose)
 			self.tags_pub = rospy.Publisher('aqua/tags', Tags, queue_size=10)
+			self.stat_pub = rospy.Publisher('robo_chat_gest/status', String, queue_size=10)
 
 			if self.publish_image:
                                 # to visualize detection, publish this
@@ -136,12 +136,19 @@ class RoboChatGest_pipeline:
                                         print
 
 
-
 			# For Menue Selection only
 			if self.menue_mode:
+			        #Notifies aquamenu that the gesture is waiting.
+			        msg = String()
+			        msg.data = 'WAITING'
+			        self.stat_pub.publish(msg)
+
 				men_ins_, men_done_ = self.men_sel.decode(right_token, left_token)
                                 #print(men_ins_, men_done_)
 				if men_done_:
+                                        #Notifies aquamenu that the gesture is done.
+					msg.data = 'DONE'
+					self.stat_pub.publish(msg)
                                         print 
                                         print ("Decoded Instruction: {0}".format(men_ins_))
                                         print
