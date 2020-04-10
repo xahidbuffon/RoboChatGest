@@ -1,8 +1,8 @@
 This repository contains a hand gesture-based human-robot communication framework named RoboChatGest. This allows divers to use a set of simple hand gestures to communicate instructions to an underwater robot and dynamically reconfigure program parameters during a mission. The ROS version, tested on Aqua 8 robot, is provided in the robo_chat_gest folder.
  
-- RoboChatGest programming rules:  https://ieeexplore.ieee.org/document/8461197
-- Model and dataset information:  https://onlinelibrary.wiley.com/doi/full/10.1002/rob.21837
-- The frozen graph of a trained model: provided in model_data folder
+- RoboChatGest programming rules: https://ieeexplore.ieee.org/document/8461197
+- Object detection models and dataset: https://onlinelibrary.wiley.com/doi/full/10.1002/rob.21837
+- Frozen graph of a trained SSD (MobileNet) model: provided in model_data folder
 - Important packages: Python 2.7, OpenCV 3, TensorFlow 1.11.0 (with object detection API) 
 
 ### Hand gestures 
